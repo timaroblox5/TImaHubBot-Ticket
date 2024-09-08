@@ -35,6 +35,8 @@ jobs:
       run: |
         echo "Starting bot..."
         node .  # Запуск бота, но не в фоновом режиме
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
 
   check_for_new_jobs:
     runs-on: ubuntu-latest
