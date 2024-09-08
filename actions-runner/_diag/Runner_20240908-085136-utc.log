@@ -1,0 +1,209 @@
+[2024-09-08 08:51:36Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2024-09-08 08:51:36Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:36Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:36Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials'
+[2024-09-08 08:51:36Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:36Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:36Z INFO HostContext] Well known config file 'Runner': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.runner'
+[2024-09-08 08:51:36Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2024-09-08 08:51:36Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.19045.
+[2024-09-08 08:51:36Z INFO Listener] Version: 2.291.0
+[2024-09-08 08:51:36Z INFO Listener] Commit: dac4363206d060d98c5ba98c0fe76d81004c03e9
+[2024-09-08 08:51:36Z INFO Listener] Culture: ru-RU
+[2024-09-08 08:51:36Z INFO Listener] UI Culture: ru-RU
+[2024-09-08 08:51:36Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:36Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:36Z INFO Listener] Validating directory permissions for: 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:37Z INFO CommandLineParser] Parse
+[2024-09-08 08:51:37Z INFO CommandLineParser] Parsing 1 args
+[2024-09-08 08:51:37Z INFO CommandLineParser] parsing argument
+[2024-09-08 08:51:37Z INFO CommandLineParser] HasArgs: False
+[2024-09-08 08:51:37Z INFO CommandLineParser] Adding Command: run
+[2024-09-08 08:51:37Z INFO Listener] Arguments parsed
+[2024-09-08 08:51:37Z INFO Runner] ExecuteCommand
+[2024-09-08 08:51:37Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin\Runner.Listener.dll
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:37Z INFO ConfigurationStore] binPath: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:37Z INFO ConfigurationStore] RootFolder: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:37Z INFO HostContext] Well known config file 'Runner': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.runner'
+[2024-09-08 08:51:37Z INFO ConfigurationStore] ConfigFilePath: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.runner
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:37Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials'
+[2024-09-08 08:51:37Z INFO ConfigurationStore] CredFilePath: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:37Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials_migrated'
+[2024-09-08 08:51:37Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials_migrated
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:37Z INFO HostContext] Well known config file 'Service': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.service'
+[2024-09-08 08:51:37Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.service
+[2024-09-08 08:51:37Z INFO CommandSettings] Flag 'help': 'False'
+[2024-09-08 08:51:37Z INFO CommandSettings] Flag 'version': 'False'
+[2024-09-08 08:51:37Z INFO CommandSettings] Flag 'commit': 'False'
+[2024-09-08 08:51:37Z INFO CommandSettings] Flag 'check': 'False'
+[2024-09-08 08:51:37Z INFO CommandSettings] Command 'configure': 'False'
+[2024-09-08 08:51:37Z INFO CommandSettings] Command 'remove': 'False'
+[2024-09-08 08:51:37Z INFO CommandSettings] Command 'warmup': 'False'
+[2024-09-08 08:51:37Z INFO ConfigurationManager] LoadSettings
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsConfigured()
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsConfigured: True
+[2024-09-08 08:51:37Z INFO ConfigurationManager] Is configured: True
+[2024-09-08 08:51:37Z INFO ConfigurationStore] Read setting file: 319 chars
+[2024-09-08 08:51:37Z INFO ConfigurationManager] Settings Loaded
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsServiceConfigured()
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsServiceConfigured: False
+[2024-09-08 08:51:37Z INFO CommandSettings] Command 'run': 'True'
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsConfigured()
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsConfigured: True
+[2024-09-08 08:51:37Z INFO ConfigurationManager] Is configured: True
+[2024-09-08 08:51:37Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2024-09-08 08:51:37Z INFO Runner] Set runner startup type - Manual
+[2024-09-08 08:51:37Z INFO CommandSettings] Flag 'once': 'False'
+[2024-09-08 08:51:37Z INFO CommandSettings] Flag 'once': 'False'
+[2024-09-08 08:51:37Z INFO Runner] RunAsync
+[2024-09-08 08:51:37Z INFO ConfigurationManager] LoadSettings
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsConfigured()
+[2024-09-08 08:51:37Z INFO ConfigurationStore] IsConfigured: True
+[2024-09-08 08:51:37Z INFO ConfigurationManager] Is configured: True
+[2024-09-08 08:51:37Z INFO ConfigurationManager] Settings Loaded
+[2024-09-08 08:51:37Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "DESKTOP-U7TVH7U",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus26.actions.githubusercontent.com/AbYadGy4dzHc8nPOgfegYLjghzQMJV9jcM2DaTtrAUZozrLxTn/",
+  "GitHubUrl": "https://github.com/timaroblox5/TImaHubBot-Ticket",
+  "WorkFolder": "_work"
+}
+[2024-09-08 08:51:37Z INFO MessageListener] Loading Credentials
+[2024-09-08 08:51:37Z INFO ConfigurationStore] HasCredentials()
+[2024-09-08 08:51:37Z INFO ConfigurationStore] stored True
+[2024-09-08 08:51:37Z INFO CredentialManager] GetCredentialProvider
+[2024-09-08 08:51:37Z INFO CredentialManager] Creating type OAuth
+[2024-09-08 08:51:37Z INFO CredentialManager] Creating credential type: OAuth
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:37Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials_rsaparams'
+[2024-09-08 08:51:37Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials_rsaparams
+[2024-09-08 08:51:37Z INFO MessageListener] Attempt to create session.
+[2024-09-08 08:51:37Z INFO MessageListener] Connecting to the Runner Server...
+[2024-09-08 08:51:37Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2024-09-08 08:51:37Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-09-08 08:51:37Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-09-08 08:51:37Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-09-08 08:51:37Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-09-08 08:51:37Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-09-08 08:51:38Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-09-08 08:51:38Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-09-08 08:51:38Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-09-08 08:51:38Z INFO MessageListener] VssConnection created
+[2024-09-08 08:51:38Z INFO Terminal] WRITE LINE: 
+[2024-09-08 08:51:38Z INFO Terminal] WRITE LINE: 
+[2024-09-08 08:51:38Z WARN GitHubActionsService] Authentication failed with status code 401.
+Date: Sun, 08 Sep 2024 08:51:38 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+WWW-Authenticate: Bearer
+Strict-Transport-Security: max-age=2592000
+X-TFS-ProcessId: 382cc56e-3786-44e9-8574-3bb04a3a1d70
+ActivityId: 6727da64-9191-41aa-a539-6bf9e23c8baa
+X-TFS-Session: 8d405676-7c0d-46f5-9ded-783ece17b342
+X-VSS-E2EID: 0ea05d10-6b76-4d6d-850e-45dcd65299ea
+X-VSS-SenderDeploymentId: 6be79bb9-f6f7-24a7-0b27-e718f2ab4200
+X-TFS-ServiceError: The+user+%27System%3aPublicAccess%3baaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa%27+is+not+authorized+to+access+this+resource.
+X-VSS-S2STargetService: 0000005A-0000-8888-8000-000000000000/visualstudio.com
+
+[2024-09-08 08:51:38Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials_rsaparams
+[2024-09-08 08:51:38Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\.credentials_rsaparams
+[2024-09-08 08:51:39Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2024-09-08 08:51:39Z INFO MessageListener] Session created.
+[2024-09-08 08:51:39Z INFO Terminal] WRITE LINE: Current runner version: '2.291.0'
+[2024-09-08 08:51:39Z INFO Terminal] WRITE LINE: 2024-09-08 08:51:39Z: Listening for Jobs
+[2024-09-08 08:51:39Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2024-09-08 08:51:40Z INFO MessageListener] Message '1' received from session 'a378b253-c7f7-421a-8589-6d297aecdcbd'.
+[2024-09-08 08:51:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work'
+[2024-09-08 08:51:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work'
+[2024-09-08 08:51:40Z INFO SelfUpdater] Cloning dotnet runtime to C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\__dotnet_runtime__
+[2024-09-08 08:51:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:43Z INFO SelfUpdater] Successfully cloned dotnet runtime to C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\__dotnet_runtime__. Total files: 221
+[2024-09-08 08:51:43Z INFO SelfUpdater] Cloning externals to C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\__externals__
+[2024-09-08 08:51:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:43Z INFO HostContext] Well known directory 'Externals': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\externals'
+[2024-09-08 08:51:43Z INFO SelfUpdater] Successfully cloned externals to C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\__externals__.
+[2024-09-08 08:51:43Z INFO SelfUpdater] Waiting for 2 tasks to complete.
+[2024-09-08 08:51:43Z INFO SelfUpdater] Externals clone finished.
+[2024-09-08 08:51:43Z INFO SelfUpdater] Calculating hash for C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\__externals__
+[2024-09-08 08:51:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:43Z INFO HostContext] Well known directory 'Externals': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\externals'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper] Starting process:
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\externals\node16\bin\node.exe'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin\hashFiles"'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\__externals__'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-09-08 08:51:43Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2024-09-08 08:51:45Z INFO ProcessInvokerWrapper] Process started with process id 14392, waiting for process exit.
+[2024-09-08 08:51:45Z INFO Runner] Refresh message received, kick-off selfupdate background process.
+[2024-09-08 08:51:45Z INFO SelfUpdater] Version '2.319.1' of 'agent' package available in server.
+[2024-09-08 08:51:45Z INFO SelfUpdater] Current running runner version is 2.291.0
+[2024-09-08 08:51:45Z INFO SelfUpdater] An update is available.
+[2024-09-08 08:51:45Z INFO Terminal] WRITE LINE: Runner update in progress, do not shutdown runner.
+[2024-09-08 08:51:45Z INFO SelfUpdater] CloneDotnetRuntimeTime: 2429ms
+[2024-09-08 08:51:45Z INFO SelfUpdater] CloneExternalsTime: 376ms
+[2024-09-08 08:51:45Z INFO SelfUpdater] RunnerPlatform: win-x64
+[2024-09-08 08:51:45Z INFO Terminal] WRITE LINE: Downloading 2.319.1 runner
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Kill entire process tree since both cancel and terminate signal has been ignored by the target process.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Scan all processes to find relationship between all processes.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Find all child processes of process '14392'.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Need kill all child processes trees before kill process '14392'.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Child process '5824' needs be killed first.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Find all child processes of process '5824'.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Kill process '5824'.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Kill process '14392'.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Process Cancellation finished.
+[2024-09-08 08:51:46Z INFO ProcessInvokerWrapper] Finished process 14392 with exit code -1, and elapsed time 00:00:02.8482969.
+[2024-09-08 08:51:46Z ERR  SelfUpdater] Fail to hash externals content: System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at GitHub.Runner.Sdk.ProcessInvoker.ExecuteAsync(String workingDirectory, String fileName, String arguments, IDictionary`2 environment, Boolean requireExitCodeZero, Encoding outputEncoding, Boolean killProcessOnCancel, Channel`1 redirectStandardIn, Boolean inheritConsoleHandler, Boolean keepStandardInOpen, Boolean highPriorityProcess, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.ProcessInvokerWrapper.ExecuteAsync(String workingDirectory, String fileName, String arguments, IDictionary`2 environment, Boolean requireExitCodeZero, Encoding outputEncoding, Boolean killProcessOnCancel, Channel`1 redirectStandardIn, Boolean inheritConsoleHandler, Boolean keepStandardInOpen, Boolean highPriorityProcess, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.SelfUpdater.HashFiles(String fileFolder, CancellationToken token)
+   at GitHub.Runner.Listener.SelfUpdater.CloneAndCalculateAssetsHash(String dotnetRuntimeCloneDirectory, String externalsCloneDirectory, CancellationToken token)
+[2024-09-08 08:51:46Z INFO SelfUpdater] Still waiting for 1 tasks to complete.
+[2024-09-08 08:51:46Z INFO SelfUpdater] Waiting for 1 tasks to complete.
+[2024-09-08 08:51:46Z INFO SelfUpdater] Dotnet runtime clone finished.
+[2024-09-08 08:51:46Z ERR  SelfUpdater] Skip compute hash since clone dotnet runtime failed/cancelled.
+[2024-09-08 08:51:46Z INFO SelfUpdater] Still waiting for 0 tasks to complete.
+[2024-09-08 08:51:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:51:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:51:46Z INFO HostContext] Well known directory 'Work': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work'
+[2024-09-08 08:51:46Z INFO SelfUpdater] Attempt 1: save latest runner into C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\_update\runner1.zip.
+[2024-09-08 08:51:46Z INFO SelfUpdater] Download runner: begin download
+[2024-09-08 08:51:46Z INFO SelfUpdater] Downloading https://github.com/actions/runner/releases/download/v2.319.1/actions-runner-win-x64-2.319.1.zip
+[2024-09-08 08:52:00Z INFO SelfUpdater] Download runner: finished download
+[2024-09-08 08:52:03Z INFO SelfUpdater] Validated Runner Hash matches C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\_update\runner1.zip : 1c78c51d20b817fb639e0b0ab564cf0469d083ad543ca3d0d7a2cdad5723f3a7
+[2024-09-08 08:52:10Z INFO SelfUpdater] Finished getting latest runner package at: C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\_update.
+[2024-09-08 08:52:10Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:52:10Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:52:10Z INFO SelfUpdater] Copy C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\_update\bin to C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin.2.319.1.
+[2024-09-08 08:52:15Z INFO HostContext] Well known directory 'Bin': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\bin'
+[2024-09-08 08:52:15Z INFO HostContext] Well known directory 'Root': 'C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner'
+[2024-09-08 08:52:15Z INFO SelfUpdater] Copy C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\_work\_update\externals to C:\Users\TimaB\OneDrive\Рабочий стол\для всё\Всё\bots\TimaHubBot Tickets\actions-runner\externals.2.319.1.
