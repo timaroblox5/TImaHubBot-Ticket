@@ -182,4 +182,8 @@ process.on('exit', () => {
     console.log('Бот выключается.');
 });
 
-client.login(process.env.TOKEN);
+try {
+    await client.login(process.env.TOKEN); // или используйте свой токен напрямую
+} catch (error) {
+    console.error('Не удалось залогиниться:', error);
+}
