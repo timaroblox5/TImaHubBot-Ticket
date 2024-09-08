@@ -1,0 +1,38 @@
+name: Auto Start and Shutdown Node.js Bot
+
+on:
+  push: # Запускается при обновлении репозитория
+    branches:
+      - master # Укажите вашу ветку, по которой будет срабатывать событие
+
+jobs:
+  start-bot:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Start Node.js application
+        run: |
+          echo "Starting Node.js application..."
+          node . & # Запуск приложения в фоновом режиме
+          echo "Node.js application is running."
+
+      - name: Wait for changes
+        run: |
+          echo "Waiting for next push..."
+          while true; do
+              sleep 600 # Ждет 10 минут, можно изменить на нужное значение
+          done
+
+  shutdown:
+    runs-on: self-hosted
+    if: github.event.action == 'push' # Условие на отключение, если это событие push
+    steps:
+      - name: Notify shutdown
+        run: |
+          echo "Runner will shut down in 3 seconds..."
+          sleep 3 # Ожидание 3 секунды
+          # Здесь вы можете остановить ваше Node.js приложение
+          pkill -f "node ." # Убийство процесса Node.js
+          echo "Shutdown complete."
