@@ -1,36 +1,46 @@
-name: Auto Start and Shutdown Node.js Bot
+name: Deploy Discord Bot
 
 on:
-  push: # Запускается при обновлении репозитория
+  push:
     branches:
-      - master # Укажите вашу ветку, по которой будет срабатывать событие
+      - master  # change if your default branch is different
+  schedule:
+    - cron: '*/20 * * * *'  # Check for updates every 20 minutes
 
 jobs:
-  start-bot:
+  run_bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
 
-      - name: Start Node.js application
-        run: |
-          echo "Starting Node.js application..."
-          node . & # Запуск приложения в фоновом режиме
-          echo "Node.js application is running."
+    - name: Install dependencies
+      run: npm install
 
-      - name: Wait for changes
-        run: |
-          echo "Waiting for next push..."
-          while true; do
-              sleep 600 # Ждет 10 минут, можно изменить на нужное значение
-          done
+    - name: Start Bot
+      run: |
+        echo "Starting bot..."
+        node . &  # Run the bot in the background
+        echo "Bot started with process ID $!"
+        # Loop to keep the bot running; will exit on new push event
+        while true; do
+          sleep 300  # Sleep for 5 minutes
+        done
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
 
-  shutdown:
-    if: github.event.action == 'push' # Условие на отключение, если это событие push
+  check_for_new_jobs:
+    runs-on: ubuntu-latest
+    
     steps:
-      - name: Notify shutdown
-        run: |
-          echo "Runner will shut down in 3 seconds..."
-          sleep 3 # Ожидание 3 секунды
-          # Здесь вы можете остановить ваше Node.js приложение
-          pkill -f "node ." # Убийство процесса Node.js
-          echo "Shutdown complete."
+    - name: Execute additional tasks
+      run: |
+        echo "Executing additional tasks every 20 minutes..."
+        # Here you can add additional commands
