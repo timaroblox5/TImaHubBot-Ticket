@@ -24,10 +24,17 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Create unique database file
+      run: |
+        mkdir -p database  # Создание директории, если её нет
+        FILENAME="file_$(date +%Y%m%d%H%M%S).db"  # Создание уникального имени файла с меткой времени
+        touch database/$FILENAME  # Создание файла с уникальным именем
+        echo "Database file created: $FILENAME"  # Вывод имени созданного файла
+
     - name: Start Bot
       run: |
         echo "Starting bot..."
-        node .  # Run the bot in the foreground
+        node .  # Запуск бота в фоновом режиме
       env:
         TOKEN: ${{ secrets.TOKEN }}
 
