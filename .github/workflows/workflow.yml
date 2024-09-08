@@ -3,14 +3,14 @@ name: Deploy Discord Bot
 on:
   push:
     branches:
-      - master  # change if your default branch is different
+      - master  # Измените, если ваша основная ветка отличается
   schedule:
-    - cron: '*/20 * * * *'  # Check for updates every 20 minutes
+    - cron: '0 */6 * * *'  # Запуск каждые 6 часов
 
 jobs:
   run_bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 120
 
     steps:
     - name: Checkout code
@@ -34,9 +34,7 @@ jobs:
     - name: Start Bot
       run: |
         echo "Starting bot..."
-        node .  # Запуск бота в фоновом режиме
-      env:
-        TOKEN: ${{ secrets.TOKEN }}
+        node .  # Запуск бота, но не в фоновом режиме
 
   check_for_new_jobs:
     runs-on: ubuntu-latest
@@ -44,5 +42,5 @@ jobs:
     steps:
     - name: Execute additional tasks
       run: |
-        echo "Executing additional tasks every 20 minutes..."
-        # Here you can add additional commands
+        echo "Executing additional tasks every 120 minutes..."
+        # Здесь можно добавить дополнительные команды
