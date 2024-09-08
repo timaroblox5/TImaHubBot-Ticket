@@ -5,7 +5,8 @@ on:
     branches:
       - master  # Измените, если ваша основная ветка отличается
   schedule:
-    - cron: '0 */6 * * *'  # Запуск каждые 6 часов
+    - cron: '59 */6 * * *'  # Запуск каждую 6-ю неделю за 59 минут
+    - cron: '0 */6 * * *'   # Запуск каждую 6-ю неделю на 0 минуте
 
 jobs:
   run_bot:
@@ -38,11 +39,12 @@ jobs:
       env:
         TOKEN: ${{ secrets.TOKEN }}
 
-  check_for_new_jobs:
+  create_new_job:
     runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'  # Проверка, что работа запущена по расписанию
     
     steps:
-    - name: Execute additional tasks
+    - name: Notify creation of new job
       run: |
-        echo "Executing additional tasks every 120 minutes..."
-        # Здесь можно добавить дополнительные команды
+        echo "Creating a new job every 5 hours and 59 minutes..."
+        # Здесь можно добавить команды для выполнения новых задач
