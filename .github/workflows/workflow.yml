@@ -7,7 +7,6 @@ on:
 
 jobs:
   start-bot:
-    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -26,7 +25,6 @@ jobs:
           done
 
   shutdown:
-    runs-on: self-hosted
     if: github.event.action == 'push' # Условие на отключение, если это событие push
     steps:
       - name: Notify shutdown
