@@ -27,12 +27,7 @@ jobs:
     - name: Start Bot
       run: |
         echo "Starting bot..."
-        node . &  # Run the bot in the background
-        echo "Bot started with process ID $!"
-        # Loop to keep the bot running; will exit on new push event
-        while true; do
-          sleep 300  # Sleep for 5 minutes
-        done
+        node .  # Run the bot in the foreground
       env:
         TOKEN: ${{ secrets.TOKEN }}
 
