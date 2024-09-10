@@ -1,17 +1,14 @@
-name: Deploy Discord Bot
+name: Run Discord Bot
 
 on:
   push:
     branches:
-      - master  # Измените, если ваша основная ветка отличается
-  schedule:
-    - cron: '59 */6 * * *'  # Запуск каждую 6-ю неделю за 59 минут
-    - cron: '0 */6 * * *'   # Запуск каждую 6-ю неделю на 0 минуте
+      - master
 
 jobs:
   run_bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 120  # Устанавливаем тайм-аут на 120 минут
 
     steps:
     - name: Checkout code
@@ -20,31 +17,25 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: '20'  # Замените на вашу версию Node.js
 
     - name: Install dependencies
       run: npm install
 
-    - name: Create unique database file
-      run: |
-        mkdir -p database  # Создание директории, если её нет
-        FILENAME="file_$(date +%Y%m%d%H%M%S).db"  # Создание уникального имени файла с меткой времени
-        touch database/$FILENAME  # Создание файла с уникальным именем
-        echo "Database file created: $FILENAME"  # Вывод имени созданного файла
-
     - name: Start Bot
       run: |
         echo "Starting bot..."
-        node .  # Запуск бота, но не в фоновом режиме
+        node .  # Запускаем бота
       env:
-        TOKEN: ${{ secrets.TOKEN }}
+        TOKEN: ${{ secrets.TOKEN }}  # Убедитесь, что токен хранится в секрете
 
-  create_new_job:
+  stop_bot:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'  # Проверка, что работа запущена по расписанию
-    
+    needs: run_bot  # Ожидает завершения run_bot
+    if: always()  # Выполняется всегда после run_bot
+
     steps:
-    - name: Notify creation of new job
+    - name: Stop Bot
       run: |
-        echo "Creating a new job every 5 hours and 59 minutes..."
-        # Здесь можно добавить команды для выполнения новых задач
+        echo "Stopping bot after 2 hours..."
+        # Здесь можно добавить команды для отключения бота, если это нужно
