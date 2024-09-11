@@ -24,7 +24,7 @@ jobs:
     - name: Start Bot
       run: |
         echo "Starting bot..."
-        node app.js &  # Запуск бота в фоновом режиме
+        node bot.js &  # Запуск бота в фоновом режиме
         echo "Bot started with process ID $!"
         sleep 7200  # Подождать 2 часа (7200 секунд)
         echo "Stopping bot..."
