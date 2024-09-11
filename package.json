@@ -2,7 +2,7 @@
   "name": "timahubbot-tickets",
   "version": "1.0.0",
   "description": "\"# TimaHubBot\" \r \"# TimaHubBot\"",
-  "main": "bot.js",
+  "main": "app.js",
   "dependencies": {
     "base64-js": "^1.5.1",
     "better-sqlite3": "^11.2.1",
