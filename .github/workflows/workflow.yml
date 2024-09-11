@@ -1,23 +1,22 @@
-name: Run Discord Bot
+name: Deploy Discord Bot
 
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: '*/120 * * * *'  # Запуск каждые 2 часа
 
 jobs:
   run_bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 120  # Устанавливаем тайм-аут на 120 минут
+    timeout-minutes: 120
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
+    
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Замените на вашу версию Node.js
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
@@ -25,28 +24,19 @@ jobs:
     - name: Start Bot
       run: |
         echo "Starting bot..."
-        node .  # Запускаем бота
+        node app.js &  # Запуск бота в фоновом режиме
+        echo "Bot started with process ID $!"
+        sleep 7200  # Подождать 2 часа (7200 секунд)
+        echo "Stopping bot..."
+        kill $!  # Остановить бот
       env:
-        TOKEN: ${{ secrets.TOKEN }}  # Убедитесь, что токен хранится в секрете
+        DISCORD_TOKEN: ${{ secrets.TOKEN }}
 
-  background_job:
+  check_for_new_jobs:
     runs-on: ubuntu-latest
-    needs: run_bot  # Ожидает завершения run_bot
-    timeout-minutes: 120  # Устанавливаем тайм-аут для фонового задания
-
+    
     steps:
-    - name: Background Task
+    - name: Execute additional tasks
       run: |
-        echo "Running background tasks while the bot is active..."
-        # Здесь можете добавить команды для фоновых задач
-
-  stop_bot:
-    runs-on: ubuntu-latest
-    needs: background_job  # Ожидает завершения background_job
-    if: always()  # Выполняется всегда после background_job
-
-    steps:
-    - name: Stop Bot
-      run: |
-        echo "Stopping bot after background tasks..."
-        # Здесь можно добавить команды для отключения бота, если это нужно
+        echo "Executing additional tasks every 20 minutes..."
+        # Здесь можно добавить дополнительные команды
