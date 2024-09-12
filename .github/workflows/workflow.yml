@@ -37,4 +37,8 @@ jobs:
       if: ${{ (github.event.schedule ) }}  # Убедитесь, что выполняете дополнительные задачи только по расписанию
 
     env:
-      DISCORD_TOKEN: ${{ secrets.TOKEN }}
+      TOKEN: ${{ secrets.TOKEN }}
+      HOST: ${{ secrets.DB_HOST }}
+      USER: ${{ secrets.DB_USER }}
+      PASS: ${{ secrets.DB_PASS }}
+      DB: ${{ secrets.DB_NAME }}

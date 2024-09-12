@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits, Events, EmbedBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle } = require('discord.js');
 const { ROLE_ID } = require('./config.json');
-const Database = require('better-sqlite3');
+const mysql = require('mysql2/promise'); // Импортируем MySQL
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
@@ -13,23 +13,31 @@ const client = new Client({
     ],
 });
 
-// Create a directory for databases if it doesn't exist
+// MySQL подключение
+const dbConfig = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+};
+
+// Проверьте, существует ли папка для баз данных
 const dbDirectory = path.join(__dirname, 'databases');
 if (!fs.existsSync(dbDirectory)) {
     fs.mkdirSync(dbDirectory);
 }
 
-// Specify the category ID here
-const CATEGORY_ID = '1273410476348280954'; // Replace with your actual category ID
+// Укажите ID категории здесь
+const CATEGORY_ID = '1273410476348280954'; // Замените на свой актуальный ID категории
 
 client.once(Events.ClientReady, () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-// Check ROLE_ID
+// Проверка ROLE_ID
 console.log('ROLE_ID Type:', Array.isArray(ROLE_ID), ROLE_ID);
 
-// Ensure ROLE_ID is an array of strings
+// Убедитесь, что ROLE_ID - это массив строк
 const validRoleIds = Array.isArray(ROLE_ID) ? ROLE_ID : [ROLE_ID];
 
 client.on(Events.MessageCreate, async (message) => {
@@ -42,7 +50,7 @@ client.on(Events.MessageCreate, async (message) => {
     }
 });
 
-// Function to send the ticket selection menu with buttons
+// Функция для отправки меню выбора тикета с кнопками
 async function sendTicketSelectionMenu(channel) {
     const embed = new EmbedBuilder()
         .setColor('#0099ff')
@@ -62,22 +70,13 @@ async function sendTicketSelectionMenu(channel) {
         .setStyle(ButtonStyle.Primary);
 
     const row = new ActionRowBuilder().addComponents(userButton, exploitButton);
-    
+
     await channel.send({ embeds: [embed], components: [row] });
 }
 
-// Create a ticket function for user violations or tsb-exploit
+// Функция для создания тикета
 async function createTicket(user, ticketName, description, interaction) {
-    const dbFile = path.join(dbDirectory, `tickets-${user.username}.db`);
-    const db = new Database(dbFile);
-
-    db.exec(`
-        CREATE TABLE IF NOT EXISTS tickets (
-            id TEXT PRIMARY KEY,
-            creator TEXT,
-            channelId TEXT
-        )
-    `);
+    const ticketId = `${user.username}-${Date.now()}`; // Уникальный ID тикета
 
     try {
         const channel = await interaction.guild.channels.create({
@@ -100,9 +99,11 @@ async function createTicket(user, ticketName, description, interaction) {
             ],
         });
 
-        // Store ticket data in the database
-        const stmt = db.prepare('INSERT INTO tickets (id, creator, channelId) VALUES (?, ?, ?)');
-        stmt.run(channel.id, user.id, channel.id);
+        // Используем MySQL
+        const db = await mysql.createConnection(dbConfig);
+
+        const query = 'INSERT INTO tickets (id, creator, channelId) VALUES (?, ?, ?)';
+        await db.execute(query, [ticketId, user.id, channel.id]);
 
         const embed = new EmbedBuilder()
             .setColor('#0099ff')
@@ -122,17 +123,15 @@ async function createTicket(user, ticketName, description, interaction) {
 
     } catch (error) {
         console.error(error);
-    } finally {
-        db.close();
     }
 }
 
-// Handle button interactions for ticket type selection and closing tickets
+// Обработка взаимодействий с кнопками
 client.on(Events.InteractionCreate, async (interaction) => {
     if (interaction.isButton()) {
         const ticketType = interaction.customId;
-        
-        // Create ticket description based on type
+
+        // Создание описания тикета в зависимости от типа
         let embedDescription;
         if (ticketType === 'user_ticket') {
             embedDescription = `Тикет: На пользователя\n\n**Инструкция**: Пожалуйста, укажите имя нарушителя, правило, которое было нарушено, и ссылку на доказательства.`;
@@ -140,25 +139,17 @@ client.on(Events.InteractionCreate, async (interaction) => {
             embedDescription = `Тикет: tsb-exploit\n\n**Инструкция**: Пожалуйста, укажите логин пользователя, ссылку на профиль и ссылку на видео-доказательства.`;
         } else if (ticketType === 'closeTicket') {
             const channel = interaction.channel;
-            const dbFile = path.join(dbDirectory, `tickets-${interaction.user.username}.db`);
-            const db = new Database(dbFile);
 
+            const db = await mysql.createConnection(dbConfig);
             try {
-                const ticketData = db.prepare('SELECT * FROM tickets WHERE channelId = ?').get(channel.id);
+                const [rows] = await db.execute('SELECT * FROM tickets WHERE channelId = ?', [channel.id]);
+                const ticketData = rows[0];
+                
                 if (ticketData && ticketData.creator === interaction.user.id) {
                     await interaction.reply({ content: 'Тикет закрыт!', ephemeral: true });
                     await channel.delete('Тикет закрыт администратором.');
 
-                    // Close the database before deleting the file
-                    db.close();
-
-                    // Adding a timeout before deleting the file
-                    setTimeout(() => {
-                        if (fs.existsSync(dbFile)) {
-                            fs.unlinkSync(dbFile); // Delete the database file
-                            console.log(`Deleted database file: ${dbFile}`);
-                        }
-                    }, 100); // 100ms delay
+                    await db.execute('DELETE FROM tickets WHERE channelId = ?', [channel.id]);
                 } else {
                     await interaction.reply({ content: 'Вы не можете закрыть этот тикет!', ephemeral: true });
                 }
@@ -166,20 +157,20 @@ client.on(Events.InteractionCreate, async (interaction) => {
                 console.error('Ошибка при закрытии тикета:', error);
                 await interaction.reply({ content: 'Произошла ошибка при закрытии тикета.', ephemeral: true });
             } finally {
-                db.close();
+                db.end();
             }
-            return; // Exit early after handle closeTicket
+            return; // Выход сразу после обработки закрытия тикета
         }
 
-        // If not closing a ticket, create the ticket
+        // Если не закрываем тикет, создаем тикет
         await createTicket(interaction.user, ticketType, embedDescription, interaction);
         await interaction.reply({ content: `Тикет успешно создан!`, ephemeral: true });
     }
 });
 
-// Listen for the process exit event to safely close the database
+// Слушаем событие выхода процесса для безопасного закрытия базы данных
 process.on('exit', () => {
     console.log('Бот выключается.');
 });
 
-client.login(process.env.TOKEN); // или используйте свой токен напрямую
+client.login(process.env.TOKEN); // Или используйте свой токен напрямую
