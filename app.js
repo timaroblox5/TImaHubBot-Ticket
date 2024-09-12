@@ -115,7 +115,8 @@ async function createTicket(user, ticketName, description, interaction) {
         const closeButton = new ButtonBuilder()
             .setCustomId('closeTicket')
             .setLabel('Закрыть тикет')
-            .setStyle(ButtonStyle.Danger);
+            .setStyle(ButtonStyle.Danger)
+            .setDisabled(false); // Кнопка активна
 
         const row = new ActionRowBuilder().addComponents(closeButton);
 
@@ -125,6 +126,43 @@ async function createTicket(user, ticketName, description, interaction) {
         console.error(error);
     }
 }
+
+// Обработка взаимодействий с кнопками
+client.on(Events.InteractionCreate, async (interaction) => {
+    if (interaction.isButton()) {
+        const ticketType = interaction.customId;
+
+        if (ticketType === 'closeTicket') {
+            const channel = interaction.channel;
+            const db = await mysql.createConnection(dbConfig);
+
+            try {
+                const [rows] = await db.execute('SELECT * FROM tickets WHERE channelId = ?', [channel.id]);
+                const ticketData = rows[0];
+                
+                if (ticketData && ticketData.creator === interaction.user.id) {
+                    await interaction.reply({ content: 'Тикет закрыт!', ephemeral: true });
+                    await channel.delete('Тикет закрыт администратором.');
+
+                    await db.execute('DELETE FROM tickets WHERE channelId = ?', [channel.id]);
+                } else {
+                    await interaction.reply({ content: 'Вы не можете закрыть этот тикет!', ephemeral: true });
+                }
+            } catch (error) {
+                console.error('Ошибка при закрытии тикета:', error);
+                await interaction.reply({ content: 'Произошла ошибка при закрытии тикета.', ephemeral: true });
+            } finally {
+                db.end();
+            }
+            return; // Выход сразу после обработки закрытия тикета
+        }
+
+        // Если не закрываем тикет, создаем тикет
+        await createTicket(interaction.user, ticketType, embedDescription, interaction);
+        await interaction.reply({ content: `Тикет успешно создан!`, ephemeral: true });
+    }
+});
+
 
 // Обработка взаимодействий с кнопками
 client.on(Events.InteractionCreate, async (interaction) => {
