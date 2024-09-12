@@ -50,6 +50,21 @@ client.on(Events.MessageCreate, async (message) => {
     }
 });
 
+// Функция для отправки примера подачи тикета
+async function sendTicketExample(channel) {
+    const exampleEmbed = new EmbedBuilder()
+        .setColor('#ffcc00')
+        .setTitle('Пример подачи тикета')
+        .setDescription('Вот пример формата, который следует использовать при создании тикета:')
+        .addFields(
+            { name: 'На пользователя', value: '**Имя нарушителя**: [Имя]\n**Причина**: [Причина]\n**Доказательства**: [Ссылка на доказательства]\n'},
+            { name: 'tsb-exploit', value: '**Логин пользователя**: [Логин]\n**Профиль**: [Ссылка на профиль]\n**Видео-доказательства**: [Ссылка на видео]'}
+        )
+        .setFooter({ text: 'Пожалуйста, следуйте этому формату!' });
+
+    await channel.send({ embeds: [exampleEmbed] });
+}
+
 // Функция для отправки меню выбора тикета с кнопками
 async function sendTicketSelectionMenu(channel) {
     const embed = new EmbedBuilder()
@@ -72,6 +87,7 @@ async function sendTicketSelectionMenu(channel) {
     const row = new ActionRowBuilder().addComponents(userButton, exploitButton);
 
     await channel.send({ embeds: [embed], components: [row] });
+    await sendTicketExample(channel); // Отправка примера
 }
 
 // Функция для создания тикета
