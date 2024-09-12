@@ -5,7 +5,7 @@ on:
     - cron: '*/120 * * * *'  # Запуск каждые 2 часа
 
 jobs:
-  run_bot:
+  run_and_check_bot:
     runs-on: ubuntu-latest
     timeout-minutes: 120
 
@@ -29,14 +29,12 @@ jobs:
         sleep 7200  # Подождать 2 часа (7200 секунд)
         echo "Stopping bot..."
         kill $!  # Остановить бот
-      env:
-        DISCORD_TOKEN: ${{ secrets.TOKEN }}
 
-  check_for_new_jobs:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Execute additional tasks
+    - name: Check for new jobs
       run: |
         echo "Executing additional tasks every 20 minutes..."
         # Здесь можно добавить дополнительные команды
+      if: ${{ (github.event.schedule ) }}  # Убедитесь, что выполняете дополнительные задачи только по расписанию
+
+    env:
+      DISCORD_TOKEN: ${{ secrets.TOKEN }}
