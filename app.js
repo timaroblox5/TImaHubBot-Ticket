@@ -76,7 +76,7 @@ async function sendTicketSelectionMenu(channel) {
 
 // Функция для создания тикета
 async function createTicket(user, ticketName, description, interaction) {
-    const ticketId = `${user.username}-${Date.now()}`; // Уникальный ID тикета
+    const ticketId = `${user.username}-${Date.now()}`; // Уникальный ID тикета1
 
     try {
         const channel = await interaction.guild.channels.create({
