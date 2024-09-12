@@ -34,7 +34,7 @@ jobs:
       run: |
         echo "Executing additional tasks every 20 minutes..."
         # Здесь можно добавить дополнительные команды
-      if: ${{ (github.event.schedule ) }}  # Убедитесь, что выполняете дополнительные задачи только по расписанию
+      if: ${{ (github.event.schedule ) }}  #0 Убедитесь, что выполняете дополнительные задачи только по расписанию
 
     env:
       TOKEN: ${{ secrets.TOKEN }}
