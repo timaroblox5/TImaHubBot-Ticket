@@ -51,7 +51,7 @@
     "ts-mixer": "^6.0.4",
     "tslib": "^2.7.0",
     "tunnel-agent": "^0.6.0",
-    "undici": "^6.19.8",
+    "undici": "^6.21.1",
     "undici-types": "^6.19.8",
     "util-deprecate": "^1.0.2",
     "wrappy": "^1.0.2",
